@@ -1,0 +1,44 @@
+{
+	"schemaVersion": 1,
+	"id": "dwmod",
+	"version": "${version}",
+	"name": "DwMod",
+	"description": "This is an example description! Tell everyone what your mod is about!",
+	"authors": [
+		"Me!"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/dwmod/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"ender.dwmod.DwMod"
+		],
+		"client": [
+			"ender.dwmod.DwModClient"
+		],
+		"fabric-datagen": [
+			"ender.dwmod.DwModDataGenerator"
+		]
+	},
+	"mixins": [
+		"dwmod.mixins.json",
+		{
+			"config": "dwmod.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.18.1",
+		"minecraft": "~1.21.10",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
