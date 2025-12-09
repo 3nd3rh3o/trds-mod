@@ -1,20 +1,20 @@
 package ender.dwmod;
 
-import ender.dwmod.portals.PortalsClientWorldManager;
+import ender.dwmod.portals.PortalClientWorldManager;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayConnectionEvents;
 import net.minecraft.client.Minecraft;
 
 public class DwModClient implements ClientModInitializer {
-	public static PortalsClientWorldManager WORLD_MANAGER;
+	public static PortalClientWorldManager WORLD_MANAGER;
 
 
 	@Override
 	public void onInitializeClient() {
 		// This entrypoint is suitable for setting up client-specific logic, such as rendering.
 		Minecraft client = Minecraft.getInstance();
-		WORLD_MANAGER = new PortalsClientWorldManager(client);
+		WORLD_MANAGER = new PortalClientWorldManager(client);
 
 		ClientPlayConnectionEvents.JOIN.register((handler, sender, mc) -> 
 		{
